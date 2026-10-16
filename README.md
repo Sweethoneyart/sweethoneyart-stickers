@@ -3,7 +3,7 @@
 © 2026 SweetHoneyArt. Todos los derechos reservados.
 
 ## Estado real
-Catálogo de demostración con consultas por WhatsApp. Productos, precios, especificaciones e ilustraciones son ejemplos; no hay inventario confirmado ni pagos. El contacto autorizado es +57 312 266 5870.
+Catálogo de demostración con consultas por WhatsApp. Las ilustraciones son oficiales de Aguapanela. Los productos, precios y especificaciones comerciales son ejemplos; no hay inventario confirmado ni pagos. El contacto autorizado es +57 312 266 5870.
 
 ## Archivos
 - `index.html`: portada y catálogo.
@@ -54,4 +54,8 @@ Fotografías y productos autorizados, precios aprobados, datos del vendedor, mat
 
 ## Personalización oficial
 Los logos PNG oficiales se encuentran en assets/. La historia recuperada está en nosotros.html. Revisa PERSONALIZACION.md para conocer las fuentes, la identidad y la animación progresiva con GSAP/ScrollTrigger. brand.css controla los colores y usos del logo; motion.js controla movimiento y compartir referencias.
+
+
+## Ilustraciones oficiales
+Las seis piezas de Diana reemplazan el arte genérico. ILUSTRACIONES.md documenta ubicaciones, originales y versiones WebP para web.
 
