@@ -21,3 +21,11 @@ El control de tamaño del navegador no cambió el tamaño real, por lo que no se
 
 La ficha usa parámetros legibles en una página estática; sus metadatos sociales iniciales son genéricos. Para tarjetas sociales individuales completas será conveniente generar HTML por producto. No se añaden ofertas estructuradas ni reseñas porque los datos comerciales son demostrativos.
 
+
+## Publicación verificada
+GitHub Pages desplegó correctamente el commit 1a247965e3fbef28f51089981732f3b0e2f1af60. URL pública: https://sweethoneyart.github.io/sweethoneyart-stickers/ . Portada, recursos y ficha cargaron en el navegador. El workflow ejecutó las pruebas y terminó con Success. El primer intento, anterior a habilitar Pages, falló; el segundo completó la publicación.
+
+
+## Personalización de identidad
+Logos oficiales PNG con transparencia verificados; página de historia y navegación comprobadas. Referencia mini-mate en URL selecciona el SKU DEMO-BOS-MIN-M, actualiza precio a 9500 y bloquea Brillante. Revisión visual en 390 px y 320 px sin desbordamiento horizontal detectado. Las limitaciones de tamaños señaladas en la revisión inicial quedan parcialmente superadas por estas nuevas comprobaciones. La auditoría completa de accesibilidad, Safari y Firefox sigue pendiente.
+

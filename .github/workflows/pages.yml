@@ -25,7 +25,7 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: |
           mkdir _site
-          cp *.html *.css config.js commerce.js app.js robots.txt _site/
+          cp *.html *.css *.js robots.txt _site/
           cp -r assets _site/
           if [ -f sitemap.xml ]; then cp sitemap.xml _site/; fi
       - uses: actions/upload-pages-artifact@v3
