@@ -30,11 +30,13 @@ Para añadir productos, duplica un objeto de `products`, cambia identificadores 
 El carrito tiene un flujo distinto: conserva el resumen provisional y permanece bloqueado en `demo: true`. No cambiar a `false` antes de aprobar catálogo, precios, políticas, identidad del vendedor y verificar el pedido completo.
 
 ## Publicación
-La versión inicial se publica en Sites porque el conector de GitHub no ofrece crear repositorios y el navegador requiere iniciar sesión. No existe todavía un repositorio oficial creado por este trabajo.
+Repositorio oficial: https://github.com/Sweethoneyart/sweethoneyart-stickers
 
-Para GitHub Pages queda preparado `.github/workflows/pages.yml`: repositorio `Sweethoneyart/sweethoneyart-stickers`, rama `main`, Settings → Pages → GitHub Actions. El workflow ejecuta pruebas y publica únicamente archivos públicos. Las rutas relativas soportan la carpeta del repositorio. Al migrar, actualizar `publicUrl`, canónicos, Open Graph, robots y sitemap con la URL verificada.
+Sitio: https://sweethoneyart.github.io/sweethoneyart-stickers/
 
-Para actualizar Sites, editar los archivos fuente, renovar `dist/` y publicar mediante el flujo de Sites conservando `.openai/hosting.json`. No incluir tokens, contraseñas o datos personales en código.
+La rama principal es `main`. En GitHub, editar un archivo y guardar el cambio inicia el workflow `.github/workflows/pages.yml`, que ejecuta las pruebas y publica solo los archivos públicos. La fuente de Pages debe ser GitHub Actions. Las rutas relativas soportan la carpeta del repositorio. No incluir tokens, contraseñas o datos personales en código.
+
+La carpeta `dist/` y `.openai/hosting.json`, cuando estén en la copia local, corresponden a un intento alternativo de Sites que no llegó a publicarse. No forman parte del repositorio GitHub ni son necesarias para Pages.
 
 ## Validación
 `node test-commerce.cjs` ejecuta 26 pruebas de lógica, sin enviar mensajes. Ver `VALIDACION.md` para resultados y límites de revisión.
@@ -44,7 +46,9 @@ Fotografías y productos autorizados, precios aprobados, datos del vendedor, mat
 
 ## Siguientes mejoras
 1. Sustituir contenido de demostración y validar políticas.
-2. Publicar el repositorio GitHub y verificar Pages cuando haya sesión disponible.
+2. Completar las verificaciones pendientes documentadas en VALIDACION.md.
 3. Completar pruebas móviles, Safari/Firefox y medición Lighthouse.
 4. Añadir colecciones múltiples y personalización cuando existan productos reales.
+
+
 
