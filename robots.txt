@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Añadir Sitemap con URL absoluta una vez confirmada la dirección pública.
+Sitemap: https://sweethoneyart.github.io/sweethoneyart-stickers/sitemap.xml
+

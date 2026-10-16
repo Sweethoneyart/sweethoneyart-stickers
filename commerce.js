@@ -1,0 +1,12 @@
+(function(root){'use strict';
+ const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(n);
+ function resolve(config,line){const product=config.products.find(p=>p.id===line.product);const option=product?.options.find(o=>o.id===line.option&&o.available);return option?{product,option}:null}
+ function clean(config,raw){if(!Array.isArray(raw))return [];const result=[];raw.slice(0,100).forEach(x=>{if(!x||!Number.isInteger(x.qty)||x.qty<1||x.qty>99||!resolve(config,x))return;const old=result.find(y=>y.product===x.product&&y.option===x.option);if(old)old.qty=Math.min(99,old.qty+x.qty);else result.push({product:x.product,option:x.option,qty:x.qty})});return result}
+ function total(config,lines){return clean(config,lines).reduce((sum,x)=>sum+resolve(config,x).option.price*x.qty,0)}
+ function message(config,lines,reference){const valid=clean(config,lines);return [config.brand,`Referencia de consulta: ${reference} (no es un pedido confirmado)`,...valid.map(x=>{const r=resolve(config,x);return `${r.product.name}\nSKU: ${r.option.sku}\nPresentación: ${r.option.presentation}\nAcabado: ${r.option.finish}\nCantidad: ${x.qty}\nPrecio unitario: ${money(r.option.price)} COP\nSubtotal: ${money(r.option.price*x.qty)} COP`}),`Total provisional: ${money(total(config,valid))} COP`,'Por favor confirmar disponibilidad, envío, plazo y total final antes de indicar el medio de pago.'].join('\n\n')}
+ function checkoutUrl(config,lines,reference){if(config.demo||!clean(config,lines).length||! /^[1-9]\d{9,14}$/.test(config.whatsapp))return null;return `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(message(config,lines,reference))}`}
+ function inquiryMessage(product,option,imageUrl){return ['Hola, me interesa este producto, puedes darme más información',`Producto: ${product.name}`,`Referencia: ${option.sku}`,`Presentación: ${option.presentation}`,`Acabado: ${option.finish}`,imageUrl?`Foto de referencia: ${imageUrl}`:'Foto de referencia: pendiente de enlace público.'].join('\n\n')}
+ function inquiryUrl(config,product,option,imageUrl){if(!/^[1-9]\d{9,14}$/.test(config.whatsapp))return null;return `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(inquiryMessage(product,option,imageUrl))}`}
+ const api={money,resolve,clean,total,message,checkoutUrl,inquiryMessage,inquiryUrl};if(typeof module!=='undefined')module.exports=api;else root.Commerce=api;
+})(typeof window!=='undefined'?window:globalThis);
+
